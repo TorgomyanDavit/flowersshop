@@ -14,8 +14,6 @@ import { useSelector } from "react-redux"
 
 
 
-
-
 function MainContainer() {
   return (
     <div id="rrr">
