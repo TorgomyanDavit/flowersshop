@@ -8,6 +8,11 @@ import icontwitter from "./imagine/icontwitter.png"
 import iconinstagram from "./imagine/iconinstagram.png"
 import linecon from "./imagine/Line.png"
 import downup from "./imagine/Group.png"
+import deliverytruck from "./imagine/deliverytruck.png"
+import pricedeliver from "./imagine/pricedeliver.png"
+import chatdelivery from "./imagine/chatdelivery.png"
+import flowers from "./imagine/flowers.png"
+import menuicon from "./imagine/menuicon.png"
 import { useSelector } from "react-redux"
 
 
@@ -22,22 +27,21 @@ function Header() {
 
   return (
           <header id="shop-header">
-
-          <nav id="nav">
-          <a href="#" id="Logo">Logo</a>
-          <form id="form">
-                  <input id="inputsearch" />
-                  <img id="searchimg" src={iconSearch} width="25px" height="25px"/>
-                  <img  id="menuicon" src="imagine/menuicon.png" alt="menuicon" />
-          </form>
-          <ul>
-            {state.map((val) => {
-              return <li key={val.id}><a href="#">{val.name}</a></li>
-            })}
-              <img src={iconSearch} width="25px" height="25px"/>
-              <img src={iconshoping} width="25px" height="25px"/>
-          </ul>
-          </nav>
+              <nav id="nav">
+              <a href="#" id="Logo">Logo</a>
+              <form id="form">
+                      <input id="inputsearch" />
+                      <img id="searchimg" src={iconSearch} width="25px" height="25px"/>
+                      <img  id="menuicon" src={menuicon}alt="menuicon"/>
+              </form>
+              <ul>
+                {state.map((val) => {
+                  return <li key={val.id}><a href="#">{val.name}</a></li>
+                })}
+                  <img src={iconSearch} width="25px" height="25px"/>
+                  <img src={iconshoping} width="25px" height="25px"/>
+              </ul>
+              </nav>
               <div id="centrtextdiv">
                 <h2>Earth Laughs in</h2>
                 <h1>FLOWER</h1>
@@ -57,7 +61,7 @@ function Header() {
                     <img className="line" src={linecon}/>
                 </div>
               </div>
-          </header>
+        </header>
   )
 }
 export {Header}
@@ -70,7 +74,7 @@ function Section1() {
     <main id="main">
         <section id="one-section">
           <div id="child1">
-            <img id="reklamimg"src="imagine/flowers.png" alt="reklam img"/>
+            <img id="reklamimg" src={flowers} alt="reklam img"/>
           </div>
           <div className="child2">
               <h2>Fresh Autumn Collection</h2>
@@ -91,17 +95,25 @@ function Section1() {
               <span>We take a guarante our flower quality</span>
             </p>
             <div className="icondiv">
-              <a href="#"><img src="/imagine/deliverytruck.png"/></a>
-              <a href="#"><img src="/imagine/pricedeliver.png"/></a>
-              <a href="#"><img id="lastimg"src="/imagine/chatdelivery.png"/></a>
+              <a href="#"><img src={deliverytruck}/></a>
+              <a href="#"><img src={pricedeliver}/></a>
+              <a href="#"><img id="lastimg" src={chatdelivery}/></a>
             </div>
           </div>
         </section>
         <Section2/>
+        <Section3/>
+        <Footer/>
       </main>
   )
 }
 export {Section1}
+
+
+
+
+
+
 
 
 function Section2() {
@@ -117,10 +129,63 @@ function Section2() {
           return (
             <div key={val.id} id="bucketdiv">
               <img id="bucket" src={val.img}/>
+              <p>
+                <span id="cum">$ 59.99</span>
+                <span id="span" >$29.99</span> 
+              </p>
+              <button id="addtocard">Add to card</button>
             </div>
           )
         })}
       </div>
     </section>
+  )
+}
+
+
+
+
+
+
+
+function Section3() {
+  return (
+    <div id="section3">
+      <span>Wedding boucqets</span>
+      <p>
+        <span>
+          Lorem ipsum dolor sit amet,
+          consetetur sadipscing elitr,
+          sed diam nonumy eirmod tempor
+          invidunt ut labore et dolore
+          magna aliquya
+        </span>
+      </p>
+      <div id="mainline">
+        <img className="line" src={linecon}/>
+        <img className="line" src={linecon}/>
+        <img className="line" src={linecon}/>
+        <img className="line" src={linecon}/>
+        <img className="line" src={linecon}/>
+      </div>
+    </div>
+  )
+}
+
+
+function Footer() {
+  const state = useSelector((state) => {
+    return state.mainShop.footer
+  })
+  return (
+    <footer id="footer">
+      {state.map((val) => {
+        return <div id="footerdiv">
+          {val.map((val) => {
+            return <span>{val}</span>
+          })}
+        </div>
+      })}
+    </footer>
   )
 }

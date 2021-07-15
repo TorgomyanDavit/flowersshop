@@ -1,5 +1,5 @@
-import {Header} from "./features/mainShop/MainContainer";
-import{ Section1} from "./features/mainShop/MainContainer";
+import {Header,Section1} from "./features/mainShop/MainContainer";
+
 
 import "./features/mainShop/MainContainer.css"
 

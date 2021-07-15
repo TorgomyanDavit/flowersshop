@@ -20,6 +20,11 @@ const initialState = {
         {id:Math.random(),name:"PRODUCT"},
         {id:Math.random(),name:"SERVICE"},
         {id:Math.random(),name:"CONTACT US"},
+    ],
+    footer:[
+        ["Categories","Wedding","Love & Romance","Gift","Greethings","simphaty"],
+        ["Information","Delivery information","privacy police","Gitoms & conditionft","Why us"],
+        ["My account","order history","wishists","News Letter"],
     ]
 }
 
