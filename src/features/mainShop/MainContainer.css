@@ -1,0 +1,386 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #0F1910;
+}
+/* header style */
+#shop-header{
+    width:100%;
+    height: 600px;
+    background-image: url(../mainShop/imagine/mainimage.png);
+    background-position:center;
+    background-size: cover;
+}
+
+#Logo{
+    font-family:'Courier New', Courier, monospace;
+    font-size: 30px;
+}
+
+#form {
+    display: none;
+}
+
+#menuicon {
+    width: 50px;
+    border-radius: 50px;
+    background-color: white;
+    display: none;
+}
+
+#nav{ 
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding:20px 50px ;
+    display: flex;
+    justify-content:space-between;
+    align-items:flex-end;
+}
+
+#nav > ul{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+#nav ul li {
+  position: relative;
+  padding: 5px;
+}
+
+#nav ul li:after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0px;
+    height: 2px;
+    background-color: rgb(255, 0, 200);
+    transition: 0.5s;
+    overflow: hidden;
+    
+}
+
+#nav ul li:hover:after{
+    width: 100%;
+}
+
+
+#nav a {
+    text-decoration: none;
+    color: #FFFFFF
+}
+
+
+/* central text */
+#centrtextdiv{
+    position: relative;
+    padding: 50px;
+    margin: 0 auto;
+    width: fit-content;
+    height:60%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 200px;
+}
+
+#centrtextdiv h2 {
+    color: lightcyan;
+    font-family: "cursive";
+    font-size:  4vw;
+    text-align: center;
+}
+
+#centrtextdiv h1 {
+    color: lightcyan;
+    font-size: 8vw;
+    letter-spacing: 50px;
+}
+
+
+/* social sites icon */
+#iconsocialsitediv{
+    float: right;
+}
+.icon{
+    margin: 30px;
+    display: block;
+}
+/* icon drop down */
+
+#linedown{
+    padding: 0 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#mainline{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.line{
+    width: 50px;
+    height: 5px;
+    margin: 0 5px;
+}
+
+
+
+/* one section data */
+#main {
+    background-color: #0F1910;
+}
+
+#one-section {
+    width: 100%;
+    background-color: #FAE3E3;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+#child1 {
+    overflow: hidden;
+    width: 400px;
+    height: 300px;
+}
+
+#reklamimg {
+    cursor: pointer;
+    transition: 2s;
+    width:100%;
+    height: 100%;
+}
+
+#reklamimg:hover {
+    transform: scale(1.05);
+}
+
+.child2 {
+    width: 500px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    
+}
+
+.child2 h2 {
+    text-align: center;
+    font-family:cursive;
+    width: 90%;
+    font-size: 30px;
+    font-style: italic;
+    letter-spacing: 0.5px;
+    color: #C6006B;
+}
+
+.child2 p {
+    font-family: Century Gothic;
+    font-size: 1.5vw;
+    font-style: oblique;
+    text-align: center;    
+}
+
+.child2 span {
+    color:violet;
+    font-size: 2vw;
+    margin: 1px;
+}
+
+.child2  button {
+    width: 250px;
+    padding: 15px 0;
+    background:transparent;
+    border-radius: 30px;
+    font-weight:bold;
+    color: rgb(7, 6, 3);
+    cursor: pointer;
+    position: relative;
+    
+}
+
+.child2 button span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0px;
+    height: 95%;
+    border-radius: 30px;
+    transition: 2s;
+    background-color: #C6006B;
+    overflow: hidden;
+    font-size:large;
+    line-height: 40px;
+   
+} 
+
+.child2 button:hover span{
+    width: 99%;
+} 
+
+.child3 {
+    width: 500px;
+    height: 300px;
+    background-color:#0F1910;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.child3 h2 {
+    font-family: Century Gothic;
+    font-size: 2.3vw;
+    color: white;
+}
+
+.child3 p {
+    color: #D3D3D3;
+    font-size: 1.2vw;
+    text-align:center;
+}
+
+.child3 p span {
+    display: inline-block;
+    color: #E32C89;
+ 
+}
+
+
+.child3 div img {
+    width: 70px;
+    border-radius: 25px;
+    margin: 5px;
+    padding: 15px;
+    background-color: #3D3D3D;
+}
+
+#lastimg {
+    background-color: #E32C89;
+}
+
+
+
+
+
+
+/* section 2 */
+
+#Dailyoffer{
+    display: block;
+    width: 600px;
+    text-align: center;
+    font-size: 70px;
+    font-style: italic;
+    color: cornsilk;
+    padding: 30px;
+}
+
+#maindivbuckt {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+#bucketdiv {
+    margin: 20px;
+}
+
+
+
+
+
+
+
+@media screen and (max-width:835px) {
+    /* header */
+
+    #form{
+        display: flex;
+        align-items: center;
+    }
+
+    #inputsearch{
+        height: 20px;
+    }
+    
+    #searchimg{
+        height: 20px;
+    }
+
+    #nav{ 
+        align-items: center;
+    }
+
+    #menuicon {
+        display:block;
+    }
+
+    #nav ul {
+        display: none;
+        cursor: pointer;
+    }
+
+    /* one section */
+    #one-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 450px;
+    }
+
+    #reklamimg {
+        cursor: pointer;
+        transition: 2s;
+        width:300px;
+    }
+
+    #child1 {
+        width: 100%;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .child2 {
+        width: 100%;
+        height:200px
+    }
+
+    .child2 p {
+        font-size: 20px;
+    }
+
+
+    .child2 button {
+        width: 150px;
+    }
+
+    .child3 {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
