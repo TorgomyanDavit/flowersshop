@@ -14,6 +14,12 @@ const initialState = {
         {id:Math.random(),name:"Roses in box",img:rosesinbox},
         {id:Math.random(),name:"mix flowers bucket",img:mixflowersbucket},
         {id:Math.random(),name:"compozicia from poppy",img:compoziciafrompoppy}
+    ],
+    navbar:[
+        {id:Math.random(),name:"HOME"},
+        {id:Math.random(),name:"PRODUCT"},
+        {id:Math.random(),name:"SERVICE"},
+        {id:Math.random(),name:"CONTACT US"},
     ]
 }
 

@@ -14,28 +14,30 @@ import { useSelector } from "react-redux"
 
 
 
-function MainContainer() {
+function Header() {
+  const state = useSelector((state) => {
+    return state.mainShop.navbar
+  })
+  console.log(state)
+
   return (
-    <div id="rrr">
           <header id="shop-header">
-              <nav id="nav"  >
-                <a href="#" id="Logo">Logo</a>
-                
-                <form id="form">
+
+          <nav id="nav">
+          <a href="#" id="Logo">Logo</a>
+          <form id="form">
                   <input id="inputsearch" />
                   <img id="searchimg" src={iconSearch} width="25px" height="25px"/>
                   <img  id="menuicon" src="imagine/menuicon.png" alt="menuicon" />
-                </form>
-                
-                <ul>
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">PRODUCT</a></li>
-                    <li><a href="#">SERVICE</a></li>
-                    <li><a href="#">CONTACT US</a></li>
-                    <img src={iconSearch} width="25px" height="25px"/>
-                    <img src={iconshoping} width="25px" height="25px"/>
-                </ul>
-              </nav>
+          </form>
+          <ul>
+            {state.map((val) => {
+              return <li key={val.id}><a href="#">{val.name}</a></li>
+            })}
+              <img src={iconSearch} width="25px" height="25px"/>
+              <img src={iconshoping} width="25px" height="25px"/>
+          </ul>
+          </nav>
               <div id="centrtextdiv">
                 <h2>Earth Laughs in</h2>
                 <h1>FLOWER</h1>
@@ -56,11 +58,11 @@ function MainContainer() {
                 </div>
               </div>
           </header>
-          <Section1/>
-    </div>
   )
 }
-export default MainContainer
+export {Header}
+
+
 
 
 function Section1() {
@@ -99,27 +101,19 @@ function Section1() {
       </main>
   )
 }
-
-
-
-
-
+export {Section1}
 
 
 function Section2() {
-
   const state = useSelector((state) => {
     return state.mainShop.shopstate
   })
  
-
-
   return (
     <section>
       <span id="Dailyoffer">Daily Offer</span>
       <div id="maindivbuckt">
         {state.map((val) => {
-          debugger
           return (
             <div key={val.id} id="bucketdiv">
               <img id="bucket" src={val.img}/>

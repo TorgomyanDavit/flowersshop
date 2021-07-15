@@ -1,11 +1,14 @@
-import MainContainer from "./features/mainShop/MainContainer";
+import {Header} from "./features/mainShop/MainContainer";
+import{ Section1} from "./features/mainShop/MainContainer";
+
 import "./features/mainShop/MainContainer.css"
 
 
 function App() {
   return (
     <div className="App">
-        <MainContainer/>
+        <Header/>
+        <Section1/>
     </div>
   );
 }
