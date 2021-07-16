@@ -1,5 +1,4 @@
-import {Header,Section1} from "./features/mainShop/MainContainer";
-
+import {Header,Section1,Footer} from "./features/mainShop/MainContainer";
 
 import "./features/mainShop/MainContainer.css"
 
@@ -9,6 +8,7 @@ function App() {
     <div className="App">
         <Header/>
         <Section1/>
+        <Footer/>
     </div>
   );
 }

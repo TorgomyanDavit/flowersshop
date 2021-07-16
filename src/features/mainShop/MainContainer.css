@@ -12,7 +12,8 @@ body {
     height: 600px;
     background-image: url(../mainShop/imagine/mainimage.png);
     background-position:center;
-    background-size: cover;
+    background-size:cover;
+    position: relative;
 }
 
 #Logo{
@@ -21,22 +22,22 @@ body {
 }
 
 #form {
+    width: 100%;
     display: none;
 }
 
 #menuicon {
-    width: 50px;
+    width: 30px;
     border-radius: 50px;
     background-color: white;
-    display: none;
 }
 
 #nav{ 
     z-index: 1;
-    position: fixed;
+    position:fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width:100%;
     padding:20px 50px ;
     display: flex;
     justify-content:space-between;
@@ -77,13 +78,28 @@ body {
     color: #FFFFFF
 }
 
+#nav > ul{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+
+
+
+
+
+
+
+
+
 
 /* central text */
 #centrtextdiv{
     position: relative;
     padding: 50px;
-    margin: 0 auto;
-    width: fit-content;
+    width: 100%;
     height:60%;
     display:flex;
     align-items: center;
@@ -95,15 +111,19 @@ body {
 #centrtextdiv h2 {
     color: lightcyan;
     font-family: "cursive";
-    font-size:  4vw;
+    font-size:  50px;
     text-align: center;
+
 }
 
 #centrtextdiv h1 {
     color: lightcyan;
-    font-size: 8vw;
-    letter-spacing: 50px;
+    font-size: 65px;
+    letter-spacing: 40px;
 }
+
+
+
 
 
 /* social sites icon */
@@ -114,8 +134,12 @@ body {
     margin: 30px;
     display: block;
 }
-/* icon drop down */
 
+
+
+
+
+/* icon drop down */
 #linedown{
     padding: 0 30px;
     width: 100%;
@@ -131,9 +155,61 @@ body {
 }
 
 .line{
-    width: 50px;
+    width: 70px;
     height: 5px;
     margin: 0 5px;
+    border-radius: 100px;
+    background-color: rgba(255, 9, 202, 0.315);
+}
+
+
+
+@media screen and (max-width:950px) {
+    #nav > ul{
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:650px) {
+
+    #nav{ 
+        padding:20px 10px ;
+        position:absolute;
+    }
+    #nav > ul{
+        display: none;
+    }
+    #form {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+
+    #inputsearch {
+        width: 100%;
+        border-radius: 90px;
+        font-size:20px;
+        text-align:center;
+        
+        /* display: none; */
+    }
+
+    #searchimg {
+        height: 30px;
+    }
+    
+    
+    #centrtextdiv h1 {
+        color: lightcyan;
+        font-size: 65px;
+        letter-spacing: 0px;
+    }
+
+    .line{
+        width: 12%;
+    }
 }
 
 
@@ -286,7 +362,7 @@ body {
     display: block;
     width: 600px;
     text-align: center;
-    font-size: 70px;
+    font-size: 50px;
     font-style: italic;
     color: cornsilk;
     padding: 30px;
@@ -420,82 +496,6 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-@media screen and (max-width:835px) {
-    /* header */
-    #form{
-        display: flex;
-        align-items: center;
-    }
-
-    #inputsearch{
-        height: 20px;
-    }
-    
-    #searchimg{
-        height: 20px;
-    }
-
-    #nav{ 
-        align-items: center;
-    }
-
-    #menuicon {
-        display:block;
-    }
-
-    #nav ul {
-        display: none;
-        cursor: pointer;
-    }
-
-    /* one section */
-    #one-section {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height: 450px;
-    }
-
-    #reklamimg {
-        cursor: pointer;
-        transition: 2s;
-        width:300px;
-    }
-
-    #child1 {
-        width: 100%;
-        height: 200px;
-        display: flex;
-        justify-content: center;
-    }
-
-    .child2 {
-        width: 100%;
-        height:200px
-    }
-
-    .child2 p {
-        font-size: 20px;
-    }
-
-
-    .child2 button {
-        width: 150px;
-    }
-
-    .child3 {
-        width: 100%;
-    }
-}
 
 
 

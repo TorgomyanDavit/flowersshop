@@ -2,12 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 import rosesinbox from "./imagine/img1.png"
 import mixflowersbucket from "./imagine/img2.png"
 import compoziciafrompoppy from "./imagine/img3.png"
+import linecon from "./imagine/Line.png"
+
 
 import callpng from "./imagine/call.png"
 import vector from "./imagine/Vector.png"
-
-
-
 
 
 const initialState = {
@@ -30,7 +29,10 @@ const initialState = {
         ["Information","Delivery information","privacy police","Gitoms & conditionft","Why us"],
         ["My account","order history","wishists","News Letter"],
         ["Contact us",[vector,"G,hasratyan street "],[callpng ,"094717021"]]
-    ]
+    ],
+    forslideline:{
+        line:[linecon,linecon,linecon,linecon,linecon]
+    }
 }
 
 const mainshopSlice = createSlice({
@@ -41,6 +43,5 @@ const mainshopSlice = createSlice({
 
     }
 })
-
 export default mainshopSlice.reducer
 

@@ -21,45 +21,45 @@ import { useSelector } from "react-redux"
 
 function Header() {
   const state = useSelector((state) => {
-    return state.mainShop.navbar
+    return state.mainShop
   })
-  console.log(state)
 
   return (
           <header id="shop-header">
               <nav id="nav">
-              <a href="#" id="Logo">Logo</a>
-              <form id="form">
-                      <input id="inputsearch" />
-                      <img id="searchimg" src={iconSearch} width="25px" height="25px"/>
-                      <img  id="menuicon" src={menuicon}alt="menuicon"/>
-              </form>
-              <ul>
-                {state.map((val) => {
-                  return <li key={val.id}><a href="#">{val.name}</a></li>
-                })}
-                  <img src={iconSearch} width="25px" height="25px"/>
-                  <img src={iconshoping} width="25px" height="25px"/>
-              </ul>
+                <a href="#" id="Logo">Logo</a>
+                <form id="form">
+                        <input id="inputsearch" placeholder="Search"/>
+                        <img id="searchimg" src={iconSearch} width="25px" height="25px"/>
+                        <img  id="menuicon" src={menuicon} alt="menuicon"/>
+                </form>
+                <ul>
+                  {state.navbar.map((val) => {
+                    return <li id="headerli" key={val.id}><a href="#">{val.name}</a></li>
+                  })}
+                    <img src={iconSearch} width="25px" height="25px"/>
+                    <img src={iconshoping} width="25px" height="25px"/>
+                </ul>
               </nav>
+
               <div id="centrtextdiv">
                 <h2>Earth Laughs in</h2>
                 <h1>FLOWER</h1>
               </div>
+
               <div id="iconsocialsitediv">
                 <a  href="https://www.facebook.com/" target="_blank" ><img className="icon" src={iconfacebook}/></a>
                 <a href="#"><img className="icon" src={icontwitter}/></a>
                 <a href="#"><img className="icon" src={iconinstagram}/></a>
               </div>
+
               <div id="linedown">
-                    <a href="#footer"><img src={downup}/></a>
-                <div id="mainline">
-                    <img className="line" src={linecon}/>
-                    <img className="line" src={linecon}/>
-                    <img className="line" src={linecon}/>
-                    <img className="line" src={linecon}/>
-                    <img className="line" src={linecon}/>
-                </div>
+                <a href="#footer"><img src={downup}/></a>
+                    <div id="mainline">
+                      {state.forslideline.line.map((linecon) => {
+                        return  <img className="line" src={linecon}/>
+                      })}
+                    </div>
               </div>
         </header>
   )
@@ -103,7 +103,6 @@ function Section1() {
         </section>
         <Section2/>
         <Section3/>
-        <Footer/>
       </main>
   )
 }
@@ -146,8 +145,6 @@ function Section2() {
 
 
 
-
-
 function Section3() {
   return (
     <div id="section3">
@@ -173,6 +170,9 @@ function Section3() {
 }
 
 
+
+
+
 function Footer() {
   const state = useSelector((state) => {
     return state.mainShop.footer
@@ -191,10 +191,6 @@ function Footer() {
     </footer>
   )
 }
-
-let x = "text"
-
-
-console.log((typeof x === "string"))
+export {Footer}
 
 
