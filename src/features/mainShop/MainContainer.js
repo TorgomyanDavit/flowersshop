@@ -178,7 +178,6 @@ function Footer() {
     return state.mainShop.footer
   })
 
-
   return (
     <footer id="footer">
       {state.map((mainval,i) => {
