@@ -177,15 +177,24 @@ function Footer() {
   const state = useSelector((state) => {
     return state.mainShop.footer
   })
+
+
   return (
     <footer id="footer">
-      {state.map((val) => {
+      {state.map((mainval,i) => {
         return <div id="footerdiv">
-          {val.map((val) => {
-            return <span>{val}</span>
+          {mainval.map((val) => {
+            return ( typeof val === "string" ) ? <span>{val}</span> : <p id="pfooter" ><img src={val[0]}/><span>{val[1]}</span></p>
           })}
         </div>
       })}
     </footer>
   )
 }
+
+let x = "text"
+
+
+console.log((typeof x === "string"))
+
+

@@ -3,6 +3,10 @@ import rosesinbox from "./imagine/img1.png"
 import mixflowersbucket from "./imagine/img2.png"
 import compoziciafrompoppy from "./imagine/img3.png"
 
+import callpng from "./imagine/call.png"
+import vector from "./imagine/Vector.png"
+
+
 
 
 
@@ -25,6 +29,7 @@ const initialState = {
         ["Categories","Wedding","Love & Romance","Gift","Greethings","simphaty"],
         ["Information","Delivery information","privacy police","Gitoms & conditionft","Why us"],
         ["My account","order history","wishists","News Letter"],
+        ["Contact us",[vector,"G,hasratyan street "],[callpng ,"094717021"]]
     ]
 }
 

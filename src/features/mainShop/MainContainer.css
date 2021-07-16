@@ -396,6 +396,35 @@ body {
     color: yellow;
 }
 
+#pfooter{
+    width: 250px;
+    height: 30px;
+    font-size: 15px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#pfooter span{
+    width: 100%;
+}
+
+#pfooter img{
+    width: 30px;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
