@@ -210,6 +210,11 @@ body {
     .line{
         width: 12%;
     }
+
+    .icon{
+        margin: 40px 0px 0px;
+        display: block;
+    }
 }
 
 
