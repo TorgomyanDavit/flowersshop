@@ -164,58 +164,7 @@ body {
 
 
 
-@media screen and (max-width:950px) {
-    #nav > ul{
-        display: flex;
-        justify-content: flex-end;
-        width: 100%;
-    }
-}
 
-@media screen and (max-width:650px) {
-
-    #nav{ 
-        padding:20px 10px ;
-        position:absolute;
-    }
-    #nav > ul{
-        display: none;
-    }
-    #form {
-        display: flex;
-        justify-content: flex-end;
-    }
-
-
-    #inputsearch {
-        width: 100%;
-        border-radius: 90px;
-        font-size:20px;
-        text-align:center;
-        
-        /* display: none; */
-    }
-
-    #searchimg {
-        height: 30px;
-    }
-    
-    
-    #centrtextdiv h1 {
-        color: lightcyan;
-        font-size: 65px;
-        letter-spacing: 0px;
-    }
-
-    .line{
-        width: 12%;
-    }
-
-    .icon{
-        margin: 40px 0px 0px;
-        display: block;
-    }
-}
 
 
 
@@ -234,9 +183,25 @@ body {
 }
 
 #child1 {
+    padding-top: 50px;
     overflow: hidden;
     width: 400px;
     height: 300px;
+    position: relative;
+}
+
+#child1 h2 {
+    text-align: center;
+    font-family:cursive;
+    width: 100%;
+    font-size: 30px;
+    font-style: italic;
+    letter-spacing: 0.5px;
+    color: #C6006B;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
 }
 
 #reklamimg {
@@ -251,7 +216,7 @@ body {
 }
 
 .child2 {
-    width: 500px;
+    width: 700px;
     height: 300px;
     display: flex;
     flex-direction: column;
@@ -263,7 +228,7 @@ body {
 .child2 h2 {
     text-align: center;
     font-family:cursive;
-    width: 90%;
+    width: 100%;
     font-size: 30px;
     font-style: italic;
     letter-spacing: 0.5px;
@@ -272,15 +237,15 @@ body {
 
 .child2 p {
     font-family: Century Gothic;
-    font-size: 1.5vw;
+    font-size: 20px;
     font-style: oblique;
     text-align: center;    
 }
 
 .child2 span {
     color:violet;
-    font-size: 2vw;
-    margin: 1px;
+    font-size: 15px;
+    margin: 4px;
 }
 
 .child2  button {
@@ -322,18 +287,17 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
 }
 
 .child3 h2 {
     font-family: Century Gothic;
-    font-size: 2.3vw;
+    font-size: 25px;
     color: white;
 }
 
 .child3 p {
     color: #D3D3D3;
-    font-size: 1.2vw;
+    font-size: 18px;
     text-align:center;
 }
 
@@ -358,35 +322,35 @@ body {
 
 
 
-
-
-
 /* section 2 */
 
 #Dailyoffer{
     display: block;
-    width: 600px;
-    text-align: center;
+    width: 100%;
     font-size: 50px;
     font-style: italic;
     color: cornsilk;
-    padding: 30px;
+    padding: 30px 100px ;
 }
 
 #maindivbuckt {
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content:space-around;
 }
 
 
 #bucketdiv {
+    width: 200px;
+    height: 600px;
     text-align: center;
-    margin: 20px;
+    margin-bottom: 100px;
 }
 
 #bucket{
-    display: block;
+    border-radius: 100px;
+    width: 100%;
+    height: 100%;
 }
 
 #bucketdiv p{
@@ -411,7 +375,7 @@ body {
 }
 
 
-
+/* section 3 */
 #section3 {
     background-image: url(../mainShop//imagine/section3img.png);
     background-position: center;
@@ -419,14 +383,14 @@ body {
     width: 100%;
     height: 300px;
     display: flex;
-    justify-content:center;
     flex-direction: column;
 }
 
 #section3 span{
+    padding:20px 50px;
     display: inline-block;
-    width: 50%;
-    text-align:end;
+    width: 100%;
+    text-align:start;
     color: white;
     font-size: 50px;
     font-style: italic;
@@ -436,7 +400,6 @@ body {
 #section3 p {
     width: 100%;
     color: white;
-    font-size: 20px;
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
@@ -445,12 +408,15 @@ body {
 
 
 #section3 p span {
-    display: inline-block;
-    font-size: 25px;
+    font-size: 20px;
     width: 400px;
     text-align: center;
     padding: 0px;
 }
+
+
+
+
 
 
 #footer{
@@ -460,15 +426,18 @@ body {
     width: 100%;
     height: 300px;
     background-color: slategray;
+    flex-wrap: wrap;
 }
 
 #footerdiv{
-    width: 300px;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
+    width: 25%;
     color: white;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 
@@ -478,16 +447,12 @@ body {
 }
 
 #pfooter{
-    width: 250px;
+    width: 100%;
     height: 30px;
     font-size: 15px;
     margin-top: 5px;
     display: flex;
-    justify-content: space-around;
-}
-
-#pfooter span{
-    width: 100%;
+    justify-content:center;
 }
 
 #pfooter img{
@@ -495,6 +460,184 @@ body {
 } 
 
 
+
+@media screen and (max-width:1250px) {
+    #maindivbuckt {
+        flex-wrap:wrap;
+    }
+
+    #bucketdiv {
+        width: 33%;
+        height: 500px;
+    }
+
+    #bucket{
+        border-radius: 100px;
+        width: 250px;
+        height: 100%;
+    }
+}
+
+
+@media screen and (max-width:950px) {
+    /* header */
+    #nav > ul{
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+    }
+    /* section 2 */
+    #one-section {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+
+    #child1 h2 {
+        display: block;
+        font-size: 22px;
+    }
+    .child3 {
+        width: 100%;
+    }
+    .child2 h2 {
+       display: none;
+    }
+
+    /* section 3 */
+    #bucketdiv {
+        width: 50%;
+    }
+
+    #section3 span {
+        font-size: 25px;
+    }
+
+    #section3 {
+        background-image: url(../mainShop//imagine/section3img.png);
+        background-position:center;
+        background-size:1000px;
+        background-repeat: no-repeat;
+    }
+
+    #footerdiv{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:650px) {
+
+    #nav{ 
+        padding:20px 10px ;
+        position:absolute;
+    }
+    #nav > ul{
+        display: none;
+    }
+    #form {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    #inputsearch {
+        width: 100%;
+        border-radius: 90px;
+        font-size:20px;
+        text-align:center;
+        
+        /* display: none; */
+    }
+
+    #searchimg {
+        height: 30px;
+    }
+    
+    
+    #centrtextdiv h1 {
+        color: lightcyan;
+        font-size: 65px;
+        letter-spacing: 0px;
+    }
+
+    .line{
+        width: 12%;
+    }
+
+    .icon{
+        margin: 40px 0px 0px;
+        display: block;
+    }
+
+
+
+    /* section 1 */
+
+    #child1 {
+        height: 300px;
+    }
+
+    #child1 h2 {
+        font-size: 22px;
+    }
+
+    .child2 {
+        height: 300px;
+    }
+    .child2 p {
+        font-size: 15px;
+    }
+    .child2 button {
+        width: 160px;
+        height: 40px;
+        font-size: 15px;
+        padding: 0px 0;
+        
+
+    }
+    .child2 button span{
+        line-height: 17px;
+    }
+
+
+    .child3 {
+        height: 300px;
+    }
+
+    .child3 div img {
+        width: 50px;
+    }
+
+
+
+    #bucketdiv {
+        width: 50%;
+    }
+}
+
+
+@media screen and (max-width:500px) {
+    #bucketdiv {
+        width: 100%;
+    }
+    #Dailyoffer {
+        font-size: 30px;
+        text-align: center;
+        padding: 30px 0px ;
+    }
+
+    #section3 span {
+        font-size: 20px;
+    }
+
+    #footerdiv{
+        width: 100%;
+        margin-top: 20px;
+    }
+    #footer{
+        height: 100%;
+    }
+}
 
 
 

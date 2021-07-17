@@ -29,16 +29,16 @@ function Header() {
               <nav id="nav">
                 <a href="#" id="Logo">Logo</a>
                 <form id="form">
-                        <input id="inputsearch" placeholder="Search"/>
-                        <img id="searchimg" src={iconSearch} width="25px" height="25px"/>
-                        <img  id="menuicon" src={menuicon} alt="menuicon"/>
+                  <input id="inputsearch" placeholder="Search"/>
+                  <img id="searchimg" src={iconSearch} width="25px" height="25px"/>
+                  <img  id="menuicon" src={menuicon} alt="menuicon"/>
                 </form>
                 <ul>
                   {state.navbar.map((val) => {
                     return <li id="headerli" key={val.id}><a href="#">{val.name}</a></li>
                   })}
-                    <img src={iconSearch} width="25px" height="25px"/>
-                    <img src={iconshoping} width="25px" height="25px"/>
+                  <img src={iconSearch} width="25px" height="25px"/>
+                  <img src={iconshoping} width="25px" height="25px"/>
                 </ul>
               </nav>
 
@@ -73,9 +73,12 @@ function Section1() {
   return (
     <main id="main">
         <section id="one-section">
+
           <div id="child1">
+            <h2>Fresh Autumn Collection</h2>
             <img id="reklamimg" src={flowers} alt="reklam img"/>
           </div>
+
           <div className="child2">
               <h2>Fresh Autumn Collection</h2>
               <p>
@@ -87,19 +90,23 @@ function Section1() {
               <span>$10.18</span>
               <button><span>Add to card</span>Add to card</button>
           </div>
+
           <div className="child3">
             <h2>Our Services {"&"} Delivery</h2>
+
             <p>
               We have a deliver Services to will take 
               your compozition 
               <span>We take a guarante our flower quality</span>
             </p>
+
             <div className="icondiv">
               <a href="#"><img src={deliverytruck}/></a>
               <a href="#"><img src={pricedeliver}/></a>
               <a href="#"><img id="lastimg" src={chatdelivery}/></a>
             </div>
           </div>
+
         </section>
         <Section2/>
         <Section3/>
@@ -147,7 +154,7 @@ function Section2() {
 
 function Section3() {
   return (
-    <div id="section3">
+    <section id="section3">
       <span>Wedding boucqets</span>
       <p>
         <span>
@@ -165,7 +172,7 @@ function Section3() {
         <img className="line" src={linecon}/>
         <img className="line" src={linecon}/>
       </div>
-    </div>
+    </section>
   )
 }
 
