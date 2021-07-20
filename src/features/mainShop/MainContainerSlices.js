@@ -23,10 +23,11 @@ const initialState = {
         {id:Math.random(),name:"compozicia from poppy",img:compoziciafrompoppy}
     ],
     navbar:[
-        {id:Math.random(),name:"Ծաղկեփնջեր"},
-        {id:Math.random(),name:"Կոմպոզիցիաներ"},
-        {id:Math.random(),name:"Սգո Ծաղիկներ"}
+        {id:Math.random(),name:"Ծաղկեփնջեր",content:["Վարդերով","Գեռբեռաներով","Դաշտային ծաղիկներով"]},
+        {id:Math.random(),name:"Կոմպոզիցիաներ",content:["զամբյուղներով","կավից ամանով","Տուփերիով"]},
+        {id:Math.random(),name:"ՍգոԾաղիկներ",content:["ծաղկոպսակներ","հոգեհանգստյան զամբըւղներ"]}
     ],
+    navbarlist:[],
     footer:[
         ["Categories","Wedding","Love & Romance","Gift","Greethings","simphaty"],
         ["Information","Delivery information","privacy police","Gitoms & conditionft","Why us"],
@@ -43,8 +44,17 @@ const mainshopSlice = createSlice({
     initialState:initialState,
 
     reducers: {
-
+        filterlistbar:(state,action) => {
+            state.navbar.forEach((val) => {
+                if(val.id === action.payload.id) {
+                    state.navbarlist.splice(0,state.navbarlist.length)
+                    state.navbarlist.push(val)
+                }
+                return state
+            })
+        }
     }
 })
+export const {filterlistbar} = mainshopSlice.actions
 export default mainshopSlice.reducer
 

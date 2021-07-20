@@ -14,6 +14,8 @@ import flowers from "./imagine/flowers.png"
 import menuicon from "./imagine/menuicon.png"
 import {useSelector} from "react-redux"
 import {useState} from "react"
+import { useDispatch } from "react-redux"
+import {filterlistbar} from "./MainContainerSlices"
 
 
 
@@ -26,34 +28,55 @@ import {useState} from "react"
 function Header() {
   const [arr,setArrey] = useState(array("Lilit-Flower"))
   const [TurnOnInputSearch,setTurnOnInputSearch] = useState(true)
-
   const [value,setValue] = useState("")
+  const [showMenubar,setshowMenubar] = useState(false)
+  const dispatch = useDispatch()
+
   const state = useSelector((state) => {
     return state.mainShop
   })
 
+  /**Logo */
   function array(Shopname) {
     return  Shopname.split("").map((letter) => {
       return <span key={Math.random()} style={{color:"rgb("+ Math.round(Math.random() * 255) +","+ Math.round(Math.random() * 255) +","+ Math.round(Math.random() * 255) +")"}}>{letter}</span>
     })
   }
 
+  /* Menubar */
+  function MenuNavbar() {
+    return <div id={showMenubar ? "menuBar" : "menubarDisplaynone"}>
+      {state.navbarlist.map((value) => {
+        return value.content.map((val) => {
+          return <p key={val.id}>{val}</p>
+        })
+      })}
+    </div>
+  }
 
 
-  
+
   return (
     <header id="shop-header">
-      <nav id="nav">
+      <nav id="nav" onMouseLeave={() => {
+        setshowMenubar(false)
+      }}>
         <a href="http://localhost:3000/#" id="Logo" onClick={(e) => {
           setArrey(array("Lilit-Flower"))
         }}>{arr}</a >
 
         <ul>
           {/* li */}
-          {state.navbar.map((val) => {
-            return <li id="headerli" key={val.id}><a href="#">{val.name}</a></li>
+          {state.navbar.map((val,i) => {
+            return <li id="headerli" key={val.id} onMouseEnter={(e) => {
+              setshowMenubar(true)
+              dispatch(filterlistbar({
+                id:val.id
+              }))
+            }}><a href="#">{val.name} {(val === state.navbarlist[0]) ? MenuNavbar() : null}</a></li>
           })}
-          
+
+          {/* form */}
           <form id="form" onSubmit={(e) => {
             e.preventDefault()
           }}>
@@ -61,12 +84,11 @@ function Header() {
                 placeholder="Search" 
                 value={value} 
                 onChange={(e) => {
-                  console.log(value)
                   setValue(e.target.value)
             }}/>
-            
-
           </form>
+
+          {/* img */}
           <img src={iconSearch} width="30px" height="30px" onClick={(e) => {
               setTurnOnInputSearch(!TurnOnInputSearch)
             }}/>
