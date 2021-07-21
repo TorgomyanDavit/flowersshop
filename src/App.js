@@ -1,5 +1,5 @@
-import {Header,Main,Footer} from "./features/mainShop/MainContainer";
-
+import {Main,Footer} from "./features/mainShop/MainContainer";
+import { Header } from "./features/mainShop/Header";
 import "./features/mainShop/MainContainer.css"
 
 
