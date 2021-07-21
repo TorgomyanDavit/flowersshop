@@ -1,5 +1,6 @@
-import {Main,Footer} from "./features/mainShop/MainContainer";
-import { Header } from "./features/mainShop/Header";
+import Main from "./features/mainShop/MainContainer";
+import Header from "./features/mainShop/Header";
+import Footer from "./features/mainShop/Footer";
 import "./features/mainShop/MainContainer.css"
 
 

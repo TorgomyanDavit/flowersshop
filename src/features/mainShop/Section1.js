@@ -41,4 +41,4 @@ function Section1() {
     </section>
     )
   }
-  export {Section1}
+  export default Section1
