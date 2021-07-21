@@ -8,6 +8,7 @@ import menuicon from "./imagine/menuicon.png"
 import {useState} from "react"
 import { useDispatch } from "react-redux"
 import {filterlistbar,assortmentedFlowers,clearSection2} from "./MainContainerSlices"
+import { useSelector } from "react-redux"
 
 
 function Header() {

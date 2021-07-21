@@ -2,23 +2,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/alt-text */
 
-import deliverytruck from "./imagine/deliverytruck.png"
-import pricedeliver from "./imagine/pricedeliver.png"
-import chatdelivery from "./imagine/chatdelivery.png"
-import flowers from "./imagine/flowers.png"
+
 import {useSelector} from "react-redux"
-
-
-
-
-
-
-
-
-
-
-
-
 
 function Main() {
   return (
@@ -31,44 +16,7 @@ function Main() {
 }
 export {Main}
 
-function Section1() {
-  return (
-  <section id="one-section">
-    <div id="child1">
-      <h2>Fresh Autumn Collection</h2>
-      <img id="reklamimg" src={flowers} alt="reklam img"/>
-    </div>
 
-    <div className="child2">
-        <h2>Fresh Autumn Collection</h2>
-        <p>
-          This flower is the best gift to exhibit  your Love , 
-          This flower is the best gift to exhibit  your Love , 
-          This flower is the best gift to exhibit your Love , 
-          This flower is the best gift to exhibit  your Love ,
-        </p>
-        <span>$10.18</span>
-        <button><span>Add to card</span>Add to card</button>
-    </div>
-
-    <div className="child3">
-      <h2>Our Services {"&"} Delivery</h2>
-      <p>
-        We have a deliver Services to will take 
-        your compozition 
-        <span>We take a guarante our flower quality</span>
-      </p>
-
-      <div className="icondiv">
-        <a href="#"><img src={deliverytruck}/></a>
-        <a href="#"><img src={pricedeliver}/></a>
-        <a href="#"><img id="lastimg" src={chatdelivery}/></a>
-      </div>
-    </div>
-  </section>
-  )
-}
-export {Section1}
 
 
 
