@@ -8,24 +8,31 @@ import vector from "./imagine/Vector.png"
 
 
 const initialState = {
-    shopstate:[
-        {id:Math.random(),name:"Roses in box",img:rosesinbox},
-        {id:Math.random(),name:"mix flowers bucket",img:mixflowersbucket},
-        {id:Math.random(),name:"compozicia from poppy",img:compoziciafrompoppy},
-        {id:Math.random(),name:"Roses in box",img:rosesinbox},
-        {id:Math.random(),name:"mix flowers bucket",img:mixflowersbucket},
-        {id:Math.random(),name:"compozicia from poppy",img:compoziciafrompoppy},
-        {id:Math.random(),name:"Roses in box",img:rosesinbox},
-        {id:Math.random(),name:"mix flowers bucket",img:mixflowersbucket},
-        {id:Math.random(),name:"compozicia from poppy",img:compoziciafrompoppy},
-        {id:Math.random(),name:"Roses in box",img:rosesinbox},
-        {id:Math.random(),name:"mix flowers bucket",img:mixflowersbucket},
-        {id:Math.random(),name:"compozicia from poppy",img:compoziciafrompoppy}
-    ],
+    shopstate:{ 
+        assortment:[],
+        roses:[
+            {id:Math.random(),name:"Roses in box",img:rosesinbox},
+            {id:Math.random(),name:"Roses in box",img:rosesinbox},
+            {id:Math.random(),name:"Roses in box",img:rosesinbox},
+            {id:Math.random(),name:"Roses in box",img:rosesinbox},
+        ],
+        bucket:[
+            {id:Math.random(),name:"mix flowers bucket",img:mixflowersbucket},
+            {id:Math.random(),name:"mix flowers bucket",img:mixflowersbucket},
+            {id:Math.random(),name:"mix flowers bucket",img:mixflowersbucket},
+            {id:Math.random(),name:"mix flowers bucket",img:mixflowersbucket},
+        ],
+        poppy:[
+            {id:Math.random(),name:"compozicia from poppy",img:compoziciafrompoppy},
+            {id:Math.random(),name:"compozicia from poppy",img:compoziciafrompoppy},
+            {id:Math.random(),name:"compozicia from poppy",img:compoziciafrompoppy},
+            {id:Math.random(),name:"compozicia from poppy",img:compoziciafrompoppy}
+        ]
+    },
     navbar:[
-        {id:Math.random(),name:"Ծաղկեփնջեր",content:["Վարդերով","Գեռբեռաներով","Դաշտային ծաղիկներով"]},
-        {id:Math.random(),name:"Կոմպոզիցիաներ",content:["զամբյուղներով","կավից ամանով","Տուփերիով"]},
-        {id:Math.random(),name:"ՍգոԾաղիկներ",content:["ծաղկոպսակներ","հոգեհանգստյան զամբըւղներ"]}
+        {id:Math.random(),name:"Ծաղկեփնջեր",content:["roses","bucket","poppy"]},
+        {id:Math.random(),name:"Կոմպոզիցիաներ",content:["Զամբյուղներով","կավից ամանով","Տուփերիով"]},
+        {id:Math.random(),name:"ՍգոԾաղիկներ",content:["ծաղկեպսակներ","Հոգեհանգստյան զամբյուղներ"]}
     ],
     navbarlist:[],
     footer:[
@@ -52,9 +59,21 @@ const mainshopSlice = createSlice({
                 }
                 return state
             })
+        },
+
+        assortmentedFlowers:(state,action) => {
+            state.shopstate.assortment.splice(0,state.shopstate.assortment.length)
+            if(Object.keys(state.shopstate).filter((val) => val === action.payload.name).toString() === action.payload.name) {
+               state.shopstate.assortment.push(state.shopstate[action.payload.name])
+            }
+        },
+
+        clearSection2:(state,action) => {
+            state.shopstate.assortment.splice(0,state.shopstate.assortment.length)
         }
+
     }
 })
-export const {filterlistbar} = mainshopSlice.actions
+export const {filterlistbar,assortmentedFlowers,clearSection2} = mainshopSlice.actions
 export default mainshopSlice.reducer
 

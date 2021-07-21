@@ -15,7 +15,7 @@ import menuicon from "./imagine/menuicon.png"
 import {useSelector} from "react-redux"
 import {useState} from "react"
 import { useDispatch } from "react-redux"
-import {filterlistbar} from "./MainContainerSlices"
+import {filterlistbar,assortmentedFlowers,clearSection2} from "./MainContainerSlices"
 
 
 
@@ -37,9 +37,11 @@ function Header() {
   })
 
   /**Logo */
-  function array(Shopname) {
-    return  Shopname.split("").map((letter) => {
-      return <span key={Math.random()} style={{color:"rgb("+ Math.round(Math.random() * 255) +","+ Math.round(Math.random() * 255) +","+ Math.round(Math.random() * 255) +")"}}>{letter}</span>
+  function array(ShopLogo) {
+    return  ShopLogo.split("").map((letter) => {
+      return <span  key={Math.random()} style={{color:"rgb("+ Math.round(Math.random() * 255) +","+ Math.round(Math.random() * 255) +","+ Math.round(Math.random() * 255) +")"}} onClick={() => {
+        dispatch(clearSection2())
+      }}>{letter}</span>
     })
   }
 
@@ -48,7 +50,11 @@ function Header() {
     return <div id={showMenubar ? "menuBar" : "menubarDisplaynone"}>
       {state.navbarlist.map((value) => {
         return value.content.map((val) => {
-          return <p key={val.id}>{val}</p>
+          return <p key={val.id} onClick={() => {
+            dispatch(assortmentedFlowers({
+              name:val
+            }))
+          }}>{val}</p>
         })
       })}
     </div>
@@ -61,7 +67,7 @@ function Header() {
       <nav id="nav" onMouseLeave={() => {
         setshowMenubar(false)
       }}>
-        <a href="http://localhost:3000/#" id="Logo" onClick={(e) => {
+        <a href="#" id="Logo" onClick={(e) => {
           setArrey(array("Lilit-Flower"))
         }}>{arr}</a >
 
@@ -73,7 +79,7 @@ function Header() {
               dispatch(filterlistbar({
                 id:val.id
               }))
-            }}><a href="#">{val.name} {(val === state.navbarlist[0]) ? MenuNavbar() : null}</a></li>
+            }}><a href="#section2">{val.name} {(val === state.navbarlist[0]) ? MenuNavbar() : null}</a></li>
           })}
 
           {/* form */}
@@ -176,28 +182,27 @@ export {Section1}
 
 
 
-
-
-
 function Section2() {
   const state = useSelector((state) => {
-    return state.mainShop.shopstate
+    return state.mainShop.shopstate.assortment
   })
- 
+  
   return (
     <section id="section2">
       <span id="titleSection2">Daily Offer</span>
         {state.map((val) => {
-          return (
-            <div key={val.id} id="flowerContent">
-              <img id="flower" src={val.img}/>
-              <p id="cum">
-                <span>$ 59.99</span>
-                <span>$29.99</span> 
-              </p>
-              <button id="addToCard">Add to card</button>
-            </div>
-          )
+          return val.map((el) => {
+            return (
+              <div key={el.id} id="flowerContent">
+                <img id="flower" src={el.img}/>
+                <p id="cum">
+                  <span>$ 59.99</span>
+                  <span>$29.99</span> 
+                </p>
+                <button id="addToCard">Add to card</button>
+              </div>
+            )
+          })
         })}
     </section>
   )
