@@ -12,10 +12,10 @@ import { useSelector } from "react-redux"
 
 
 function Header() {
-    const [arr,setArrey] = useState(array("Lilit-Flower"))
     const [TurnOnInputSearch,setTurnOnInputSearch] = useState(true)
-    const [value,setValue] = useState("")
+    const [arr,setArrey] = useState(array("Lilit-Flower"))
     const [showMenubar,setshowMenubar] = useState(false)
+    const [value,setValue] = useState("")
     const dispatch = useDispatch()
   
     const state = useSelector((state) => {
@@ -53,7 +53,7 @@ function Header() {
         <nav id="nav" onMouseLeave={() => {
           setshowMenubar(false)
         }}>
-          <a href="#" id="Logo" onClick={(e) => {
+          <a href="#shop-header" id="Logo" onClick={(e) => {
             setArrey(array("Lilit-Flower"))
           }}>{arr}</a >
   
@@ -81,11 +81,11 @@ function Header() {
             </form>
   
             {/* img */}
-            <img src={iconSearch} width="30px" height="30px" onClick={(e) => {
+            <img alt="iconsearch" src={iconSearch} width="30px" height="30px" onClick={(e) => {
                 setTurnOnInputSearch(!TurnOnInputSearch)
               }}/>
-            <img src={iconshoping} width="30px" height="30px"/>
-            <img id="menuicon"src={menuicon} alt="menuicon"/>
+            <img alt="iconShoping" src={iconshoping} width="30px" height="30px"/>
+            <img alt="menuicon" id="menuicon"src={menuicon} />
           </ul>
         </nav>
   
@@ -95,16 +95,16 @@ function Header() {
         </div>
   
         <div id="iconsocialsitediv">
-          <a  href="https://www.facebook.com/" target="_blank" ><img className="icon" src={iconfacebook}/></a>
-          <a href="#"><img className="icon" src={icontwitter}/></a>
-          <a href="#"><img className="icon" src={iconinstagram}/></a>
+          <a href="https://www.facebook.com/" rel="noreferrer" target="_blank" ><img alt="iconfacebook" className="icon" src={iconfacebook}/></a>
+          <a href="https://www.facebook.com/" rel="noreferrer" target="_blank"><img alt="icontwitter" className="icon" src={icontwitter}/></a>
+          <a href="https://www.facebook.com/" rel="noreferrer" target="_blank"><img alt="iconinstagram" className="icon" src={iconinstagram}/></a>
         </div>
   
         <div id="linedown">
-          <a href="#footer"><img src={downup}/></a>
+          <a href="#footer"><img alt="downup" src={downup}/></a>
             <div id="mainline">
               {state.forslideline.line.map((val) => {
-                return  <img key={val.id} className="line" src={val.img}/>
+                return  <img alt="line" key={val.id} className="line" src={val.img}/>
               })}
             </div>
         </div>

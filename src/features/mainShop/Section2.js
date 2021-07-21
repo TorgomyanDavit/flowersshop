@@ -12,7 +12,7 @@ function Section2() {
             return val.map((el) => {
               return (
                 <div key={el.id} id="flowerContent">
-                  <img id="flower" src={el.img}/>
+                  <img alt="flower" id="flower" src={el.img}/>
                   <p id="cum">
                     <span>$ 59.99</span>
                     <span>$29.99</span> 

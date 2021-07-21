@@ -20,7 +20,7 @@ function Section3() {
   
         <div id="mainline">
               {state.forslideline.line.map((val) => {
-                return  <img key={val.id} className="line" src={val.img}/>
+                return  <img alt="line" key={val.id} className="line" src={val.img}/>
               })}
         </div>
       </section>

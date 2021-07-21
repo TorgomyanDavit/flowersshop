@@ -33,9 +33,9 @@ function Section1() {
         </p>
   
         <div className="icondiv">
-          <a href="#"><img src={deliverytruck}/></a>
-          <a href="#"><img src={pricedeliver}/></a>
-          <a href="#"><img id="lastimg" src={chatdelivery}/></a>
+          <img alt="deliverytruck" src={deliverytruck}/>
+          <img alt="deliverytruck" src={pricedeliver}/>
+          <img alt="deliverytruck" id="lastimg" src={chatdelivery}/>
         </div>
       </div>
     </section>

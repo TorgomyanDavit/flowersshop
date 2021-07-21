@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/alt-text */
-import {useSelector} from "react-redux"
 import Section1  from "./Section1"
 import Section2 from "./Section2"
 import Section3 from "./Section3"
